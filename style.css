@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+  --color-scheme:#32ff7e;
+  --green:#3ae374;
+  --lemon-green:rgb(71, 247, 13);
+}
+body{
+  background-color: #000;
+}
+/*-----banner---*/
+
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #000, rgb(51, 50, 50));
+  opacity: 0.7; 
+}
+
+.image-overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2em;
+  font-weight: bolder;
+}
+.image-overlay-content span{
+  color: rgb(18, 218, 218);
+  font-size: 0.8rem;
+}
+
+.image-overlay-content h6{
+  font: size 1rem;
+  color: var(--lemon-green);
+}
+.image-overlay-content h1{
+  font-size: 2.5rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/*-----banner animation---*/
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 1s ease-out;
+}
+@keyframes flip {
+  from {
+    transform: perspective(400px) rotateY(0);
+  }
+  to {
+    transform: perspective(400px) rotateY(360deg);
+  }
+}
+
+.flip {
+  animation: flip 1s ease-in-out;
+}
+
+.banner-container{
+  position: relative;
+  top: 100px;
+  text-align: center;
+}
+.wrapper{
+  width:150%;
+  background-color: black;
+  box-shadow: 10px 10px 15px 15px rgba(168, 235, 113, 0.1);
+  border-radius: 20px;
+  border-color: 2px solid var(--color-scheme);
+  padding-top: 15px;
+  padding-bottom: 15px;
+ text-align: center;
+}
+.wrapper h4{
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+
+@keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  animation: flash 1.5s inherit;
+  animation-delay: 5s;
+}
